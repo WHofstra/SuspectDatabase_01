@@ -21,9 +21,45 @@
     <ClCompile Include="Person.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Suspect.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Attorney.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Judge.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Prosecutor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Courtcase.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Offence.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Person.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Suspect.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Attorney.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Judge.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Prosecutor.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Courtcase.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Offence.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -151,11 +151,23 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Attorney.cpp" />
+    <ClCompile Include="Courtcase.cpp" />
+    <ClCompile Include="Judge.cpp" />
+    <ClCompile Include="Offence.cpp" />
     <ClCompile Include="Person.cpp" />
+    <ClCompile Include="Prosecutor.cpp" />
+    <ClCompile Include="Suspect.cpp" />
     <ClCompile Include="SuspectDatabase_01.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Attorney.h" />
+    <ClInclude Include="Courtcase.h" />
+    <ClInclude Include="Judge.h" />
+    <ClInclude Include="Offence.h" />
     <ClInclude Include="Person.h" />
+    <ClInclude Include="Prosecutor.h" />
+    <ClInclude Include="Suspect.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

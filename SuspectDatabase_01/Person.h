@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+#include <time.h>
 
 class Person
 {
@@ -11,9 +12,13 @@ class Person
 		std::string GetEthnicity();
 		int GetBSN();
 
-    private:
+    protected:
 		std::string name;
 		std::string ethnicity;
 		int bsn;
+
+		/*time_t timer;
+	      struct tm year = { 0 };
+	      double seconds;*/
 };
 

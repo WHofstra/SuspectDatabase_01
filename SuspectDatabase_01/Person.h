@@ -1,6 +1,8 @@
 #pragma once
+#include <iostream>
 #include <string>
-#include <time.h>
+#include <ctime>
+#include <chrono>
 
 class Person
 {
@@ -16,9 +18,5 @@ class Person
 		std::string name;
 		std::string ethnicity;
 		int bsn;
-
-		/*time_t timer;
-	      struct tm year = { 0 };
-	      double seconds;*/
 };
 

@@ -1,5 +1,6 @@
 #pragma once
 #include "Person.h"
+
 class Suspect : public Person
 {
     public:

@@ -1,0 +1,19 @@
+std::time_t now;
+int years;
+struct tm b;
+struct tm* birth;
+
+  now = std::chrono::system_clock::to_time_t(std::chrono::system_clock::now());
+
+//years = floor(now / (86400 * 365.25));          //Years Since 1 Januari 1970 UTC
+  years = floor((now / (86400 * 365.25)) + 1970); //Current Year
+
+  birth          = &b;
+  birth->tm_year = 18;
+  birth->tm_mon  = 3;
+  birth->tm_mday = 20;
+
+  mktime(birth);
+
+  std::cout << "It has been " << now << " years since 0." << std::endl;
+  std::cout << birth << std::endl;

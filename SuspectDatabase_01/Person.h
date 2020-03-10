@@ -11,12 +11,11 @@ class Person
 		~Person();
 
 		std::string GetName();
-		std::string GetEthnicity();
 		int GetBSN();
 
     protected:
 		std::string name;
-		std::string ethnicity;
 		int bsn;
+		struct tm birthDate;
 };
 

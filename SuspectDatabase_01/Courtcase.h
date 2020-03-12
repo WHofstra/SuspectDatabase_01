@@ -15,11 +15,11 @@ class Courtcase
 		Courtcase();
 	    ~Courtcase();
 
-		void AddSuspect(Suspect* aSuspect);
-		void AddAttorney(Attorney* anAttorney);
-		void AddProsecutor(Prosecutor* aProsecutor);
-		void AddJudge(Judge* aJudge);
-		void AddOffence(Offence* anOffence);
+		void AddSuspect(Suspect* aSuspect, std::list<Suspect*>* aSuspectList);
+		void AddAttorney(Attorney* anAttorney, std::list<Attorney*>* anAttorneyList);
+		void AddProsecutor(Prosecutor* aProsecutor, std::list<Prosecutor*>* aProsecutorList);
+		void AddJudge(Judge* aJudge, std::list<Judge*>* aJudgeList);
+		void AddOffence(Offence* anOffence, std::list<Offence*>* anOffenceList);
 
 		std::string GetSentence();
 

@@ -10,29 +10,29 @@ Courtcase::~Courtcase()
 
 }
 
-void Courtcase::AddSuspect(Suspect* aSuspect)
+void Courtcase::AddSuspect(Suspect* aSuspect, std::list<Suspect*>* aSuspectList)
 {
-	suspectList.push_back(aSuspect);
+	aSuspectList->push_back(aSuspect);
 }
 
-void Courtcase::AddAttorney(Attorney* anAttorney)
+void Courtcase::AddAttorney(Attorney* anAttorney, std::list<Attorney*>* anAttorneyList)
 {
-	attorneyList.push_back(anAttorney);
+	anAttorneyList->push_back(anAttorney);
 }
 
-void Courtcase::AddProsecutor(Prosecutor* aProsecutor)
+void Courtcase::AddProsecutor(Prosecutor* aProsecutor, std::list<Prosecutor*>* aProsecutorList)
 {
-	prosecutorList.push_back(aProsecutor);
+	aProsecutorList->push_back(aProsecutor);
 }
 
-void Courtcase::AddJudge(Judge* aJudge)
+void Courtcase::AddJudge(Judge* aJudge, std::list<Judge*>* aJudgeList)
 {
-	judgeList.push_back(aJudge);
+	aJudgeList->push_back(aJudge);
 }
 
-void Courtcase::AddOffence(Offence* anOffence)
+void Courtcase::AddOffence(Offence* anOffence, std::list<Offence*>* anOffenceList)
 {
-	offenceList.push_back(anOffence);
+	anOffenceList->push_back(anOffence);
 }
 
 std::string Courtcase::GetSentence()

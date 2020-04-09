@@ -1,5 +1,4 @@
 #pragma once
-#include <string>
 #include <list>
 #include <time.h>
 
@@ -15,11 +14,11 @@ class Courtcase
 		Courtcase();
 	    ~Courtcase();
 
-		void AddSuspect(Suspect* aSuspect, std::list<Suspect*>* aSuspectList);
-		void AddAttorney(Attorney* anAttorney, std::list<Attorney*>* anAttorneyList);
-		void AddProsecutor(Prosecutor* aProsecutor, std::list<Prosecutor*>* aProsecutorList);
-		void AddJudge(Judge* aJudge, std::list<Judge*>* aJudgeList);
-		void AddOffence(Offence* anOffence, std::list<Offence*>* anOffenceList);
+		std::list<Suspect*> AddSuspect(Suspect* aSuspect, std::list<Suspect*>* aSuspectList);
+		std::list<Attorney*> AddAttorney(Attorney* anAttorney, std::list<Attorney*>* anAttorneyList);
+		std::list<Prosecutor*> AddProsecutor(Prosecutor* aProsecutor, std::list<Prosecutor*>* aProsecutorList);
+		std::list<Judge*> AddJudge(Judge* aJudge, std::list<Judge*>* aJudgeList);
+		std::list<Offence*> AddOffence(Offence* anOffence, std::list<Offence*>* anOffenceList);
 
 		std::string GetSentence();
 

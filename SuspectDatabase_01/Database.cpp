@@ -34,8 +34,17 @@ void Database::AddCourtcase(Courtcase* aCase)
 
 void Database::GetResults(std::string* aString)
 {
-	if (*aString == "Herman")
+	for (Courtcase* c : database)
 	{
-		std::cout << "1 Result" << std::endl;
+		std::cout << "-----" << c->GetName() << "-----" << std::endl;
+		for (Person* p : c->GetPersonList())
+		{
+			if (p->GetName().length() < 16) {
+				std::cout << p->GetName() << "\t\t(" << p->GetBSN() << ")" << std::endl;
+			} else {
+				std::cout << p->GetName() << "\t(" << p->GetBSN() << ")" << std::endl;
+			}
+		}
+		std::cout << std::endl;
 	}
 }

@@ -1,5 +1,6 @@
 #pragma once
 #include <list>
+#include <map>
 #include <time.h>
 
 #include "Suspect.h"
@@ -11,16 +12,17 @@
 class Courtcase
 {
     public:
-		Courtcase();
+		Courtcase(std::string aName, bool stillRunning);
 	    ~Courtcase();
 
-		std::list<Suspect*> AddSuspect(Suspect* aSuspect, std::list<Suspect*>* aSuspectList);
-		std::list<Attorney*> AddAttorney(Attorney* anAttorney, std::list<Attorney*>* anAttorneyList);
-		std::list<Prosecutor*> AddProsecutor(Prosecutor* aProsecutor, std::list<Prosecutor*>* aProsecutorList);
-		std::list<Judge*> AddJudge(Judge* aJudge, std::list<Judge*>* aJudgeList);
-		std::list<Offence*> AddOffence(Offence* anOffence, std::list<Offence*>* anOffenceList);
+		void AddSuspect(Suspect* aSuspect);
+		void AddAttorney(Attorney* anAttorney);
+		void AddProsecutor(Prosecutor* aProsecutor);
+		void AddJudge(Judge* aJudge);
+		void AddOffence(Offence* anOffence);
 
-		std::string GetSentence();
+		void AddSentence(Suspect* aSuspect, std::string aSentence);
+		void GetSentences();
 
     private:
 		std::list<Suspect*> suspectList;
@@ -29,7 +31,11 @@ class Courtcase
 		std::list<Judge*> judgeList;
 		std::list<Offence*> offenceList;
 
-		std::string sentence;
-		struct tm startingDate;
+		std::string name;
+		std::map<Suspect*, std::string> sentence;
+		//struct tm startingDate;
+
+		bool running;
+
 };
 

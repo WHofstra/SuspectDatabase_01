@@ -1,6 +1,7 @@
 #include "Attorney.h"
 
-Attorney::Attorney()
+Attorney::Attorney(std::string aName, int aBSN)
+	: Person::Person(aName, aBSN)
 {
 
 }

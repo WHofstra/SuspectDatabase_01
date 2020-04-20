@@ -1,6 +1,7 @@
 #include "Offence.h"
 
-Offence::Offence()
+Offence::Offence(std::string aName, std::string anInfo)
+	: name(aName), info(anInfo)
 {
 
 }
@@ -10,14 +11,22 @@ Offence::~Offence()
 
 }
 
+std::string Offence::GetName()
+{
+	return name;
+}
+
 std::string Offence::GetInfo()
 {
+	return info;
+}
 
-	return std::string();
+void Offence::SetMaxSentence(std::string aMax)
+{
+	maxSentence = aMax;
 }
 
 std::string Offence::GetMaxSentence()
 {
-
-	return std::string();
+	return maxSentence;
 }

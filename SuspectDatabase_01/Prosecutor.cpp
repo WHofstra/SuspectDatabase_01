@@ -1,6 +1,7 @@
 #include "Prosecutor.h"
 
-Prosecutor::Prosecutor()
+Prosecutor::Prosecutor(std::string aName, int aBSN)
+	: Person::Person(aName, aBSN)
 {
 
 }

@@ -1,15 +1,17 @@
 #pragma once
 #include "Person.h"
+#include "Offence.h"
+#include <list>
 
 class Suspect : public Person
 {
     public:
-		Suspect();
+		Suspect(std::string aName, int aBSN);
 		~Suspect();
 
 		std::string GetOffence();
 
     protected:
-		std::string typeOffence;
+		std::list<Offence*> typeOffence;
 };
 

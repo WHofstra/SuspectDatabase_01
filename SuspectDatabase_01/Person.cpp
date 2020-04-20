@@ -1,6 +1,7 @@
 #include "Person.h"
 
-Person::Person()
+Person::Person(std::string aName, int aBSN)
+	:name(aName), bsn(aBSN)
 {
 	
 }
@@ -12,10 +13,10 @@ Person::~Person()
 
 std::string Person::GetName()
 {
-	return std::string();
+	return name;
 }
 
 int Person::GetBSN()
 {
-	return 0;
+	return bsn;
 }

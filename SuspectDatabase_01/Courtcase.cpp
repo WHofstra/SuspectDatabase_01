@@ -1,6 +1,7 @@
 #include "Courtcase.h"
 
-Courtcase::Courtcase()
+Courtcase::Courtcase(std::string aName, bool stillRunning)
+	: name(aName), running(stillRunning)
 {
 
 }
@@ -10,33 +11,48 @@ Courtcase::~Courtcase()
 
 }
 
-std::list<Suspect*> Courtcase::AddSuspect(Suspect* aSuspect, std::list<Suspect*>* aSuspectList)
+void Courtcase::AddSuspect(Suspect* aSuspect)
 {
-	aSuspectList->push_back(aSuspect);
+	suspectList.push_back(aSuspect);
 }
 
-std::list<Attorney*> Courtcase::AddAttorney(Attorney* anAttorney, std::list<Attorney*>* anAttorneyList)
+void Courtcase::AddAttorney(Attorney* anAttorney)
 {
-	anAttorneyList->push_back(anAttorney);
+	attorneyList.push_back(anAttorney);
 }
 
-std::list<Prosecutor*> Courtcase::AddProsecutor(Prosecutor* aProsecutor, std::list<Prosecutor*>* aProsecutorList)
+void Courtcase::AddProsecutor(Prosecutor* aProsecutor)
 {
-	aProsecutorList->push_back(aProsecutor);
+	prosecutorList.push_back(aProsecutor);
 }
 
-std::list<Judge*> Courtcase::AddJudge(Judge* aJudge, std::list<Judge*>* aJudgeList)
+void Courtcase::AddJudge(Judge* aJudge)
 {
-	aJudgeList->push_back(aJudge);
+	judgeList.push_back(aJudge);
 }
 
-std::list<Offence*> Courtcase::AddOffence(Offence* anOffence, std::list<Offence*>* anOffenceList)
+void Courtcase::AddOffence(Offence* anOffence)
 {
-	anOffenceList->push_back(anOffence);
+	offenceList.push_back(anOffence);
 }
 
-std::string Courtcase::GetSentence()
+void Courtcase::AddSentence(Suspect* aSuspect, std::string aSentence)
 {
+	sentence.at(aSuspect) = aSentence;
+}
 
-	return std::string();
+void Courtcase::GetSentences()
+{
+	if (running)
+	{
+		std::cout << name << " is still an ongoing case." << std::endl;
+		std::cout << "There is yet to be a verdict." << std::endl;
+	}
+	else
+	{
+		for (Suspect* s : suspectList)
+		{
+			std::cout << s->GetName() << " received " << sentence.at(s) << std::endl;
+		}
+	}
 }

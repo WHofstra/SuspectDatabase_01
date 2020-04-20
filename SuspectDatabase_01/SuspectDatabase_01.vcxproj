@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClCompile Include="Attorney.cpp" />
     <ClCompile Include="Courtcase.cpp" />
+    <ClCompile Include="Database.cpp" />
     <ClCompile Include="Judge.cpp" />
     <ClCompile Include="Offence.cpp" />
     <ClCompile Include="Person.cpp" />
@@ -163,6 +164,7 @@
   <ItemGroup>
     <ClInclude Include="Attorney.h" />
     <ClInclude Include="Courtcase.h" />
+    <ClInclude Include="Database.h" />
     <ClInclude Include="Judge.h" />
     <ClInclude Include="Offence.h" />
     <ClInclude Include="Person.h" />

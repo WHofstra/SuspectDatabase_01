@@ -6,7 +6,7 @@
 class Person
 {
     public:
-		Person();
+		Person(std::string aName, int aBSN);
 		~Person();
 
 		std::string GetName();
@@ -15,6 +15,6 @@ class Person
     protected:
 		std::string name;
 		int bsn;
-		struct tm birthDate;
+		//struct tm birthDate;
 };
 

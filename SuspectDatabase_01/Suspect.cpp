@@ -1,6 +1,7 @@
 #include "Suspect.h"
 
-Suspect::Suspect()
+Suspect::Suspect(std::string aName, int aBSN)
+	: Person::Person(aName, aBSN)
 {
 	
 }
@@ -12,5 +13,5 @@ Suspect::~Suspect()
 
 std::string Suspect::GetOffence()
 {
-	return std::string();
+	return "";
 }

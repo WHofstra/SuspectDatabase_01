@@ -4,7 +4,7 @@
 class Attorney : public Person
 {
     public:
-		Attorney();
+		Attorney(std::string aName, int aBSN);
 		~Attorney();
 
     protected:

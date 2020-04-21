@@ -1,7 +1,5 @@
 #pragma once
-#include <iostream>
-#include <ctime>
-#include <chrono>
+#include <string>
 
 class Person
 {

@@ -11,7 +11,23 @@ Suspect::~Suspect()
 
 }
 
-std::string Suspect::GetOffence()
+void Suspect::AddOffence(Offence* anOffence)
 {
-	return "";
+	typeOffence.push_back(anOffence);
+}
+
+Offence* Suspect::GetOffence(int index)
+{
+	offIt = typeOffence.begin();
+	for (int i = 0; i < index; i++)
+	{
+		offIt++;
+	}
+
+	return *offIt;
+}
+
+std::list<Offence*> Suspect::GetOffenceList()
+{
+	return typeOffence;
 }

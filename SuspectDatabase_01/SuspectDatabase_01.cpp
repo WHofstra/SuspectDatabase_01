@@ -11,6 +11,18 @@ void Setup(Database* aDatabase)
 	Courtcase* case03 = new Courtcase("Sall's Money Laundering", true);
 	Courtcase* case04 = new Courtcase("The Great St. Carlos Deal", true);
 
+	//Define All Offences
+	Offence* robb = new Offence("Bank Robbery");
+	Offence* assa = new Offence("Assault");
+	Offence* aspo = new Offence("Assault on Police Officers");
+	Offence* obst = new Offence("Obstruction of Justice");
+	Offence* murd = new Offence("First Degree Murder");
+	Offence* muco = new Offence("Complicity in First Degree Murder");
+	Offence* laun = new Offence("Money Laundering");
+	Offence* brib = new Offence("Bribery");
+	Offence* drpo = new Offence("Illegal Drug Possession");
+	Offence* drtr = new Offence("Drug Trafficking");
+
 	//Define All Suspects,
 	//Case 1
 	case01->AddSuspect(new Suspect("Maine, Herman W.", 7647599));
@@ -86,6 +98,59 @@ void Setup(Database* aDatabase)
 	case04->AddJudge(new Judge("List, Ernest N.", 6980416));
 	case04->AddJudge(new Judge("Valken, Deidra", 1059400));
 	case04->AddJudge(new Judge("Dover, Ben", 2063910));
+
+	//Assign Offences to Suspects,
+	//Case 1
+	for (int i = 0; i < 4; i++) {
+		case01->AssignOffenceTo(i, robb);
+		case01->AssignOffenceTo(i, obst);
+		case01->AssignOffenceTo(i, assa);
+		case01->AssignOffenceTo(i, aspo);
+	}
+	case01->AssignOffenceTo(4, robb);
+	case01->AssignOffenceTo(4, obst);
+
+	//Case 2
+	case02->AssignOffenceTo(0, murd);
+	case02->AssignOffenceTo(1, muco);
+
+	//Case 3
+	for (int i = 0; i < 5; i++) {
+		case03->AssignOffenceTo(i, laun);
+	}
+	case03->AssignOffenceTo(0, brib);
+
+	//Case 4
+	for (int i = 0; i < 6; i++) {
+		case04->AssignOffenceTo(i, drpo);
+		case04->AssignOffenceTo(i, drtr);
+	}
+
+	//Assign Defense to Suspects,
+	//Case 1
+	for (int i = 0; i < 5; i++) {
+		case01->AssignAttorneyTo(0, i);
+	}
+
+	//Case 2
+	for (int i = 0; i < 2; i++) {
+		case02->AssignAttorneyTo(0, i);
+	}
+
+	//Case 3
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 5; j++) {
+			case03->AssignAttorneyTo(i, j);
+		}
+	}
+
+	//Case 4
+	case04->AssignAttorneyTo(0, 0);
+	case04->AssignAttorneyTo(0, 3);
+	case04->AssignAttorneyTo(0, 5);
+	case04->AssignAttorneyTo(1, 1);
+	case04->AssignAttorneyTo(1, 2);
+	case04->AssignAttorneyTo(1, 4);
 
 	//Add Courtcases to Database
 	aDatabase->AddCourtcase(case01);

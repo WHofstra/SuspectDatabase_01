@@ -9,9 +9,12 @@ class Suspect : public Person
 		Suspect(std::string aName, int aBSN);
 		~Suspect();
 
-		std::string GetOffence();
+		void AddOffence(Offence* anOffence);
+		Offence* GetOffence(int index);
+		std::list<Offence*> GetOffenceList();
 
     protected:
 		std::list<Offence*> typeOffence;
+		std::list<Offence*>::iterator offIt;
 };
 

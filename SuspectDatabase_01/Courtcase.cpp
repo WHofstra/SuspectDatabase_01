@@ -35,11 +35,6 @@ void Courtcase::AddJudge(Judge* aJudge)
 	judgeList.push_back(aJudge);
 }
 
-void Courtcase::AddOffence(Offence* anOffence)
-{
-	offenceList.push_back(anOffence);
-}
-
 void Courtcase::AddSentence(Suspect* aSuspect, std::string aSentence)
 {
 	sentence.at(aSuspect) = aSentence;
@@ -65,11 +60,6 @@ std::list<Judge*> Courtcase::GetJudgeList()
 	return judgeList;
 }
 
-std::list<Offence*> Courtcase::GetOffenceList()
-{
-	return offenceList;
-}
-
 std::list<Person*> Courtcase::GetPersonList()
 {
 	return personList;
@@ -93,4 +83,38 @@ std::string Courtcase::GetSentences()
 		sentnce += (s->GetName() + " received " + sentence.at(s) + "\n");
 	}
 	return sentnce;
+}
+
+bool Courtcase::IsRunning()
+{
+	return running;
+}
+
+void Courtcase::AssignOffenceTo(int indexSus, Offence* anOffence)
+{
+	itSus = suspectList.begin();
+	for (int i = 0; i < indexSus; i++)
+	{
+		itSus++;
+	}
+
+	(*itSus)->AddOffence(anOffence);
+}
+
+void Courtcase::AssignAttorneyTo(int indexAtt, int indexSus)
+{
+	itAtt = attorneyList.begin();
+	itSus = suspectList.begin();
+
+	for (int i = 0; i < indexAtt; i++)
+	{
+		itAtt++;
+	}
+
+	for (int i = 0; i < indexSus; i++)
+	{
+		itSus++;
+	}
+
+	(*itAtt)->AddSuspectToDefend(*itSus);
 }

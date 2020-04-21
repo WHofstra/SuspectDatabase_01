@@ -4,7 +4,7 @@
 class Offence
 {
     public:
-		Offence(std::string aName, std::string anInfo);
+		Offence(std::string aName, std::string anInfo = "");
     	~Offence();
 
 		std::string GetName();
